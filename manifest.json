@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "My Extension",
+  "version": "1.0",
+  "description": "Add a button to your browser next to Hubspot contacts that opens their LinkedIn pages.",
+  "icons": [
+    {
+      "src": "icon16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icon32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icon48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "icon128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "action": {
+    "default_icon": "icon48.png",
+    "default_title": "My Extension",
+    "default_popup": "popup/popup.html"
+      
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://*.hubspot.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.hubspot.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
